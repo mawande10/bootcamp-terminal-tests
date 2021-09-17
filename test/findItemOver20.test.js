@@ -1,25 +1,37 @@
-var itemList = [
-    {name : 'apples', qty : 10},
-    {name : 'pears', qty : 37},
-    {name : 'bananas', qty : 27},
-    {name : 'apples', qty : 3},
-];
+let assert = require("assert");
+let findItemsOver20 = require("../findItemsOver20");
 
-var results = [
-    {name : 'pears', qty : 37},
-    {name : 'bananas', qty : 27},
-];
-
-
-describe('findItemsOver20', function(){
-    it('should return only items with quantiy over 20', function(){
-        assert.deepEqual(findItemsOver20([{name:"apples", qty:10}, {name:"pears",qty:37}, {name:"bananas",qty:27}, ]), [{"name": "pears","qty": 37}, {"name":"bananas","qty":27}, ])
-               
+describe('The findItemOver20 function' , function(){
+    it('It should return products that have quantity higher than the threshold given.', function(){
+  
+    assert.equal(findItemsOver20(
+    [
+        {name : 'apples', qty : 10},
+        {name : 'pears', qty : 37},
+        {name : 'bananas', qty : 27},
+        {name : 'apples', qty : 3}
+    ],20),2);
     });
-
-    it('should return no items with quantiy over 20', function(){
-        assert.notEqual(findItemsOver20([''],'', true));
+    
+    
+    
+    
+    it('Expected result is not deeply equal to the input threshold.' , function(){
         
-    });
+        assert.notDeepEqual(findItemsOver20(
+    [
+        {name : 'apples', qty : 10},
+        {name : 'pears', qty : 37},
+        {name : 'bananas', qty : 27},
+        {name : 'apples', qty : 3}
+    ],30),1000);
+        assert.notDeepEqual(findItemsOver20(
+    [
+        {name : 'apples', qty : 10},
+        {name : 'pears', qty : 37},
+        {name : 'bananas', qty : 27},
+        {name : 'apples', qty : 3}
+    ],30),-8);
 
+    });
 });

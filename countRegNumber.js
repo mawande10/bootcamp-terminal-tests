@@ -1,4 +1,4 @@
-module.exports = function countRegNumber(string_parameter){
-    return (string_parameter.split(',')).length;
+module.exports = function countRegNumber(parameter){
+    return parameter.split(',').length;
    
    };

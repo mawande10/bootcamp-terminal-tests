@@ -1,3 +1,6 @@
+let assert = require("assert");
+let countAllPaarl = require("../countAllPaarl");
+
 describe('countAllPaarl' , function(){
     it('If the test passes, it should count  all Paarl regNumbers' , function(){
         var regCount = countAllPaarl('CJ 345 123, CJ 2345, CL 123-546, CK 345, CJ 123')

@@ -1,15 +1,22 @@
-assert.equal('R7.45', totalPhoneBill('call, sms, call, sms, sms'));
-assert.equal('R3.40', totalPhoneBill('call, sms'));
-assert.equal('R1.30', totalPhoneBill('sms, sms'));
+let assert = require("assert");
+let totalPhoneBill = require("../totalPhoneBill");
 
-describe('totalPhoneBill' , function(){
-    it('should return the amount for sms' , function(){
-        assert.equal(totalPhoneBill('sms'), 'R0.65');
+describe('The totalPhoneBill function' , function(){
+    it('It should return the total phone bill for the given string.' , function(){
+        
+        assert.equal(totalPhoneBill('call, sms, call, sms, sms'),'R7.45');
+        
+      
 
     });
+    
+    
+    it('Inputed variable(Total phone bill) string is not deeply equal to the given string(total phone bill).'  , function(){
+        
+      assert.notDeepEqual(totalPhoneBill('call, sms, call, sms, sms'),'R10.00');
+      assert.notDeepEqual(totalPhoneBill('call, sms, call, sms, sms'),'  ');
 
-    it('should return the amount for call' , function(){
-        assert.equal(totalPhoneBill("call"), "R2.75")
+
     });
 
 });

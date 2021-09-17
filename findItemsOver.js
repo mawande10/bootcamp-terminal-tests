@@ -1,8 +1,13 @@
-module.exports = function findItemsOver(listItem, itemList){
-    const list1 = [];
-    for (var i in listItem){
-      if (listItem[i].qty>itemList) list1.push(listItem[i])
+module.exports = function(itemList,threshold)
+{ 
+ 
+  var fruit = [];
+  for(var k=0; k<itemList.length; k++)
+  {
+    if(itemList[k].qty > threshold)
+    {
+      	fruit.push(itemList[k]);
+    }
   }
-    console.log(list1);
-    return list1;
-  }
+  return fruit.length;
+};

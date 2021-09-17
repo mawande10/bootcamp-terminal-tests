@@ -1,3 +1,6 @@
+let assert = require("assert");
+let transportFee = require("../transportFee");
+
 describe('transportFee' , function(){
     it('should return the morning shift amount' , function(){
         assert.equal(transportFee('morning'), 'R20');

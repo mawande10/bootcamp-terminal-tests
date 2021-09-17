@@ -1,3 +1,6 @@
+let assert = require("assert");
+let greet = require("../greet");
+
 describe('The greet function' , function(){
     it('should return "Hello, Mawande" when I greet Mawande' , function(){
         

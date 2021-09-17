@@ -1,22 +1,23 @@
-assert.equal((new Date().getFullYear() - 1976), yearsAgo(1976))
-assert.equal((new Date().getFullYear() - 2000), yearsAgo(2000));
+let assert = require("assert");
+let yearsAgo = require("../yearsAgo");
 
-describe('yearsAgo' , function(){
-    it('should return how many years ago' , function(){
-        var num = '8'
-            assert.equal(yearsAgo(num), 2013);
+describe('The yearsAgo function' , function(){
+    it('Expected to return the number of Years ago, given a year in the past.' , function(){
         
-    });
-
-    it('should return a variable which is a string' , function(){
-        assert.typeOf('num', 'string', 'it s a string');
-
-    });
-
-    it('should return it is not true' , function(){
-        var num = '13'
-            assert.notEqual(yearsAgo(num), 2015);
+        assert.equal(yearsAgo(1976),42);
+        
+        assert.equal(yearsAgo(2017),1);
+        
+        
 
     });
+    
+    
+     it('Expected result is not deeply equal to the Input value (i.e The input value(years ago) is incorrect).' , function(){
+        
+        assert.notDeepEqual(yearsAgo(2017),5);
+        assert.notDeepEqual(yearsAgo(1996),23);
 
+    });
+    
 });

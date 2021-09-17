@@ -1,3 +1,6 @@
+let assert = require("assert");
+let fromWhere = require("../fromWhere");
+
 assert.equal(fromWhere('CY'), 'Bellville');
 assert.equal(fromWhere('CJ'), 'Paarl');
 assert.equal(fromWhere('CA'), 'Cape Town');

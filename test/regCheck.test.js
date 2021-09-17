@@ -1,3 +1,6 @@
+let assert = require("assert");
+let regCheck = require("../regCheck");
+
 var isGP = regCheck('DV 23 NB GP', 'GP');
 
 //should print true

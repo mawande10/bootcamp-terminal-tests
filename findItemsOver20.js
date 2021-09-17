@@ -1,17 +1,11 @@
-module.exports = function findItemsOver20(listItem){
-    const list = [];
-    for (var i=0; i<listItem.length; i++){
-      if (listItem[i].qty>20) list.push(listItem[i])
+module.exports = function(list){
+  var fruits = [];
+  for(var i=0; i<list.length; i++)
+  {
+    if(list[i].qty > 20 )
+    {  	
+      	fruits.push(list[i]);
     }
-        console.log(list);
-    return list;
-    }
-    
-  function findItemsOver(listItem, itemList){
-    const list1 = [];
-    for (var i in listItem){
-      if (listItem[i].qty>itemList) list1.push(listItem[i])
-  }
-    console.log(list1);
-    return list1;
-  }
+  } 
+  return fruits.length;
+}
